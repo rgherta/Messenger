@@ -1,0 +1,32 @@
+ion-header ion-title h1{
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-left: 7%;
+}
+
+ion-header ion-icon{
+    margin-left:5%;
+    margin-top:7%;
+    margin-right:1%;
+    width: 20px;
+}
+
+ion-segment {
+    --color: #fff;
+    --background: #23395d;
+}
+
+ion-segment-button {
+    --color: #fff;
+    --color-checked:rgb(199, 228, 255);
+}
+
+ion-fab-button {
+    --background: #70a7ff;
+    --color: #fff;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    ion-icon {
+        color: #fff;
+    }
+  }

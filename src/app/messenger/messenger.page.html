@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title><h1>Messenger</h1></ion-title> 
+
+  <!-- Segment with default selection -->
+  <ion-segment (ionChange)="segmentChanged($event)" value="messages">
+    <ion-segment-button value="messages">
+      <ion-label>Messages</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="calls">
+      <ion-label>Phone Calls</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  
+  </ion-toolbar>
+  </ion-header>
+  
+  
+  <ion-content *ngIf="show_messages">
+  
+  
+      <!-- fab placed to the bottom end -->
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="testFab()" > 
+          <ion-icon name="chatbox-ellipses"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+  
+  
+      <ion-item  button (click)="openChat()" *ngFor="let item of [].constructor(50)" >
+        <ion-avatar slot="start">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
+        </ion-avatar>
+        <ion-label>
+          Max Musterman
+        </ion-label>
+      </ion-item>
+  
+  
+  </ion-content>

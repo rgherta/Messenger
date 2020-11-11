@@ -1,0 +1,25 @@
+.message{
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin:5%;
+    font-size: 14px;
+    padding: 1px 10px;
+    width: fit-content;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    opacity: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    text-shadow: rgba(0,0,0,.01) 0 0 1px;
+}
+
+.in{
+    background-color: #ffffff;
+    margin-right:auto;
+}
+
+.out{
+    background-color: #dcf8c6;
+    margin-left:auto;
+}

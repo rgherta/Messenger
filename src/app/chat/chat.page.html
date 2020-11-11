@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Message</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button color="white">
+        <ion-icon name="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content #content>
+  <message-item *ngFor="let msg of messages" [message]="msg"></message-item> 
+</ion-content>
+
+<!-- Footer without a border -->
+<ion-footer class="ion-no-border">
+  <ion-item>
+    <ion-textarea [(ngModel)]="mTextArea" auto-grow=true rows=1 placeholder="Type a message..."></ion-textarea>
+    <ion-icon button (click)="sendMessage()" name="send" slot="end"></ion-icon>
+  </ion-item>
+</ion-footer>
