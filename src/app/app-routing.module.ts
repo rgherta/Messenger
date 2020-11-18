@@ -16,7 +16,7 @@ const routes: Routes = [
     loadChildren: () => import('./messenger/messenger.module').then( m => m.MessengerPageModule)
   },
   {
-    path: 'message',
+    path: 'message/:channel',
     loadChildren: () => import('./chat/chat.module').then( m => m.ChatPageModule)
   },
 

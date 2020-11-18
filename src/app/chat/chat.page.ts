@@ -1,4 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { NavController, NavParams } from '@ionic/angular';
+import { ActivatedRoute } from '@angular/router';
 
 import { Storage } from '@ionic/storage';
 
@@ -9,38 +11,29 @@ import { Storage } from '@ionic/storage';
 })
 export class ChatPage implements OnInit {
 
-  private messages:any = [
-    {state:'in', author:'Max Musterman', content: 'my sample message in'},
-    {state:'out', author:'Max Musterman', content: 'my sample message out'},
-    {state:'in', author:'Max Musterman', content: 'my sample reply in'},
-    {state:'out', author:'Max Musterman', content: 'my sample reply out'},
-    {state:'in', author:'Max Musterman', content: 'my sample message in'},
-    {state:'out', author:'Max Musterman', content: 'my sample message out'},
-    {state:'in', author:'Max Musterman', content: 'my sample reply in'},
-    {state:'out', author:'Max Musterman', content: 'my sample reply out'},
-    {state:'in', author:'Max Musterman', content: 'my sample message in'},
-    {state:'out', author:'Max Musterman', content: 'my sample message out'},
-    {state:'in', author:'Max Musterman', content: 'my sample reply in'},
-    {state:'out', author:'Max Musterman', content: 'my sample reply out'},
-    {state:'in', author:'Max Musterman', content: 'my sample message in'},
-    {state:'out', author:'Max Musterman', content: 'my sample message out'},
-    {state:'in', author:'Max Musterman', content: 'my sample reply in'},
-    {state:'out', author:'Max Musterman', content: 'my sample reply out'},
-    {state:'in', author:'Max Musterman', content: 'my sample message in'},
-    {state:'out', author:'Max Musterman', content: 'my sample message out'},
-    {state:'in', author:'Max Musterman', content: 'my sample reply in'},
-    {state:'out', author:'Max Musterman', content: 'my sample reply out'}
-  ]
+  private messages:any = []
+  private channel:string
 
   @ViewChild('content') private content: any;
   private messageDb: Storage;
   private mTextArea;
 
-  constructor(private cd:ChangeDetectorRef) { }
+  constructor(private cd:ChangeDetectorRef,public nav: NavController, private aroute:ActivatedRoute ) { }
 
   ngOnInit() {
-    this.scrollBottom();
-    this.messageDb = new Storage({ name:'messages', driverOrder: ['indexeddb'] }, 'sampleStorageId');
+    //this.scrollBottom();
+    
+    this.channel = this.aroute.snapshot.paramMap.getAll("channel")[0]
+
+
+    this.messageDb = new Storage({ name:this.channel, driverOrder: ['indexeddb'] }, 'sampleStorageId');
+    this.messageDb.forEach((value, key) => {
+      this.messages.push(value)
+      //console.log(value, key)
+    });
+
+
+
   }
 
   clearTextArea(){

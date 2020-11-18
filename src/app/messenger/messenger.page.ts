@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { NavigationExtras } from '@angular/router'
 
 @Component({
   selector: 'app-messenger',
@@ -21,9 +22,10 @@ export class MessengerPage implements OnInit {
   }
 
 
-  openChat(){
+  openChat(channel){
     console.log("message-peer");
-    this.nav.navigateForward(['/message'],{animated:true, animationDirection:"forward"})
+  
+    this.nav.navigateForward(['/message', channel],{animated:true, animationDirection:"forward"})
   }
 
   segmentChanged(event:any){
