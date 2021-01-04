@@ -10,10 +10,10 @@ ionic serve
 <table>
   <tr>
     <td> 
-      <img width="250px" src="https://raw.githubusercontent.com/rgherta/Messenger/master/screenshots/m2.png" alt="contacts screen" title="Main screen" />
+      <img width="350px" src="https://raw.githubusercontent.com/rgherta/Messenger/master/screenshots/m2.png" alt="contacts screen" title="Main screen" />
     </td>
     <td> 
-      <img width="250px" src="https://raw.githubusercontent.com/rgherta/Messenger/master/screenshots/m1.png" alt="message screen" title="Chat screen" />
+      <img width="350px" src="https://raw.githubusercontent.com/rgherta/Messenger/master/screenshots/m1.png" alt="message screen" title="Chat screen" />
     </td>
   </tr>
 </table>
